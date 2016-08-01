@@ -46,11 +46,7 @@ struct Ship {
     }
 
     init(length: Int, location: GridLocation, isVertical: Bool) {
-        self.length = length
-        self.location = location
-        self.isVertical = isVertical
-        self.isWooden = false
-        self.hitTracker = HitTracker()
+        self.init(length: length, location: location, isVertical: isVertical, isWooden: false)
     }
     
     init(length: Int, location: GridLocation, isVertical: Bool, isWooden: Bool) {
@@ -115,7 +111,7 @@ class ControlCenter {
         let xLargeShip = Ship(length: 5, location: GridLocation(x: 7, y: 2), isVertical: true)
         human.addShipToGrid(xLargeShip)
     
-        let mine1 = Mine(location: GridLocation(x: 6, y: 0), penaltyText: "KABOOM! 💣💣💣", guaranteesHit: true)
+        let mine1 = Mine(location: GridLocation(x: 6, y: 0), penaltyText: "KABOOM! 💣💣💣")
         human.addMineToGrid(mine1)
         
         let mine2 = Mine(location: GridLocation(x: 3, y: 3), penaltyText: "That's will teach him a lesson", guaranteesHit: true)
